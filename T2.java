@@ -19,20 +19,19 @@ public class T2 {
 	//产生算式
 	public static  void generateEquations() {
 		for (int i = 0; i < 50; i++) {
-			int a=(int) (101 * Math.random());
-			s[i][0] = String.valueOf(a);//生成0~100的随机数
-			if (a<=50) {
-				int b=(int) (a* Math.random());
-				s[i][1] = String.valueOf(b);//当a<=50时 ，b<a
-			}else {
-				int b=(int) ((100-a)* Math.random());
-				s[i][1] = String.valueOf(b);//当a>50时，b<100-a
-			}
 			int o = (int) ((int) (2 * Math.random()));//生成随机数1或2 
 			if (o == 1) {
 				s[i][2] = "+";
+				int a=(int) (101 * Math.random());
+				s[i][0] = String.valueOf(a);//生成0~100的随机数
+				int b=(int) ((101-a)* Math.random());// 加法运算时  a+b<=100,所以 b的范围为 0~100-a
+				s[i][1] = String.valueOf(b);
 			} else {
 				s[i][2] = "-";
+				int a=(int) (101 * Math.random());
+				s[i][0] = String.valueOf(a);//生成0~100的随机数
+				int b=(int) ((a+1)* Math.random());//减法运算时  a>b  所以b的范围为 0~a
+				s[i][1] = String.valueOf(b);
 			}
 			int j=0;  
 			String Temp1 = s[i][0] + s[i][2]  + s[i][1];//记录本次产生的算式（正序）
