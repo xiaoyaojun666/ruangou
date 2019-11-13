@@ -19,9 +19,9 @@ public class T2 {
 	//产生算式
 	public static  void generateEquations() {
 		for (int i = 0; i < 50; i++) {
-			s[i][0] = String.valueOf((int) (101 * Math.random()));
-			s[i][1] = String.valueOf((int) (101 * Math.random()));
-			int o = (int) ((int) (2 * Math.random()));
+			s[i][0] = String.valueOf((int) (101 * Math.random()));//生成1~100的随机数
+			s[i][1] = String.valueOf((int) (101 * Math.random()));//生成1~100的随机数
+			int o = (int) ((int) (2 * Math.random()));//生成随机数1或2 
 			if (o == 1) {
 				s[i][2] = "+";
 			} else {
@@ -35,6 +35,7 @@ public class T2 {
 			System.out.println("第" + (i+1)+ "题:" + s[i][0] + s[i][2] + s[i][1]+"=");
 		}
 	}
+	//打印答案    
 	public static void printCalculation() {
 		for (int i = 0; i < 50; i++) {
 			if(s[i][2].equals("+")) {
